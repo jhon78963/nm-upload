@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Role\Seeders;
+
+use App\Role\Models\Role;
+use Illuminate\Database\Seeder;
+
+class RoleSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $role = new Role();
+        $role->name = "Admin";
+        $role->save();
+    }
+}
