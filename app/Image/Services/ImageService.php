@@ -18,8 +18,9 @@ class ImageService {
         return $this->modelService->create(new Image(), $newImage);
     }
 
-    public function delete(Image $image): void
+    public function delete(string $path): void
     {
+        $image = $this->modelService->get(new Image(), 'path', $path);
         $this->modelService->delete($image);
     }
 

@@ -81,10 +81,10 @@ class ImageController extends Controller
         }
     }
 
-    public function delete(Image $image): JsonResponse
+    public function delete(string $path): JsonResponse
     {
-        $this->fileService->delete($image->path);
-        $this->imageService->delete($image);
+        $this->fileService->delete($path);
+        $this->imageService->delete($path);
         return response()->json([
             'message' => 'Image removed from system'
         ]);
