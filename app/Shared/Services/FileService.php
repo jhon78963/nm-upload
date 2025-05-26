@@ -12,7 +12,8 @@ class FileService
     {
         if ($request->hasFile('file')) {
             $file = $request->file('file');
-            $path = Storage::disk('s3')->put($filePath, $file);
+            $originalName = $file->getClientOriginalName();
+            $path = Storage::disk('s3')->put($filePath, $file, $originalName);
             return $path;
         }
 
@@ -24,7 +25,8 @@ class FileService
         $uploadedPaths = [];
         if ($request->hasFile('file')) {
             foreach ($request->file('file') as $file) {
-                $uploadedPaths[] = Storage::disk('s3')->put($filePath,  $file);
+                $originalName = $file->getClientOriginalName();
+                $uploadedPaths[] = Storage::disk('s3')->put($filePath,  $file, $originalName);
 
             }
         }
