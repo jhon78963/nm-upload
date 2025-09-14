@@ -3,7 +3,6 @@ namespace App\Image\Services;
 
 use App\Image\Models\Image;
 use App\Shared\Services\ModelService;
-use Auth;
 
 class ImageService {
     protected ModelService $modelService;

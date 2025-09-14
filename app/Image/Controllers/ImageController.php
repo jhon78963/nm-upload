@@ -18,7 +18,6 @@ use DB;
 class ImageController extends Controller
 {
     private string $images_path = 'images/products';
-    private string $s3_path = 'https://novedadesmaritex.s3.sa-east-1.amazonaws.com';
     protected FileService $fileService;
     protected ImageService $imageService;
     protected SharedService $sharedService;

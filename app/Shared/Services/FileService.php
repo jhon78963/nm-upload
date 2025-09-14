@@ -13,7 +13,7 @@ class FileService
         if ($request->hasFile('file')) {
             $file = $request->file('file');
             $originalName = $file->getClientOriginalName();
-            $path = Storage::disk('s3')->put($filePath, $file, $originalName);
+            $path = Storage::disk('public')->putFileAs($filePath, $file, $originalName);
             return $path;
         }
 
@@ -26,7 +26,7 @@ class FileService
         if ($request->hasFile('file')) {
             foreach ($request->file('file') as $file) {
                 $originalName = $file->getClientOriginalName();
-                $uploadedPaths[] = Storage::disk('s3')->put($filePath,  $file, $originalName);
+                $uploadedPaths[] = Storage::disk('public')->putFileAs($filePath,  $file, $originalName);
 
             }
         }
@@ -35,15 +35,15 @@ class FileService
 
     public function get(string $filePath): ?string
     {
-        return Storage::disk('s3')->exists($filePath)
-            ? Storage::disk('s3')->path($filePath)
+        return Storage::disk('public')->exists($filePath)
+            ? Storage::disk('public')->path($filePath)
             : NULL;
     }
 
     public function delete(string $filePath): ?string
     {
-        return Storage::disk('s3')->exists($filePath)
-            ? Storage::disk('s3')->delete($filePath)
+        return Storage::disk('public')->exists($filePath)
+            ? Storage::disk('public')->delete($filePath)
             : NULL;
     }
 }

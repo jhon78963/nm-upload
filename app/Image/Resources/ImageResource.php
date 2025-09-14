@@ -17,7 +17,7 @@ class ImageResource extends JsonResource
         return [
             'id'=> $this->id,
             'imageName' => $this->name,
-            'imagePath' => "https://zerogroups-storage.s3.us-east-1.amazonaws.com/$this->path",
+            'imagePath' => config('app.file_url') . '/' . ltrim($this->path, '/'),
         ];
     }
 }

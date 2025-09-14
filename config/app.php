@@ -52,7 +52,8 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://api-sslais.zerogroups.uk'),
+    'url' => env('APP_URL', 'http://127.0.0.1:8001'),
+    'file_url' => env('APP_FILE_URL', 'http://127.0.0.1:8001/storage'),
 
     /*
     |--------------------------------------------------------------------------
