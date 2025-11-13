@@ -29,12 +29,12 @@ php artisan serve
 ```
 sudo chown -R www-data:www-data /var/www
 sudo chown -R $USER:www-data storage
-sudo chown -R www-data:www-data storage bootstrap/cache 
-sudo chown -R $USER:www-data bootstrap/cache 
-sudo chmod -R 775 storage 
-sudo chmod -R 775 storage bootstrap/cache 
-sudo chmod -R 775 bootstrap/cache
-sudo composer dump-autoload
-php artisan config:cache
+sudo chown -R $USER:www-data bootstrap/cache
+chmod -R 775 storage
+chmod -R 775 bootstrap/cache
+sudo systemctl reload nginx
+php artisan optimize:clear
 php artisan route:cache
+php artisan view:cache
+php artisan config:cache
 ```
