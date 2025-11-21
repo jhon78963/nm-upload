@@ -1,10 +1,10 @@
 <?php
-namespace App\Shared\Services;
+namespace App\Shared\Foundation\Services;
 
-use App\Shared\Requests\GetAllRequest;
-use Arr;
-use Carbon\Carbon;
+use App\Shared\Foundation\Requests\GetAllRequest;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Carbon\Carbon;
+use Arr;
 use Str;
 
 class SharedService {

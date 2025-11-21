@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Image\Controllers;
+namespace App\Shared\Image\Controllers;
 
-use App\Image\Models\Image;
-use App\Image\Resources\ImageResource;
-use App\Image\Services\ImageService;
-use App\Shared\Controllers\Controller;
-use App\Shared\Requests\FileMultipleUploadRequest;
-use App\Shared\Requests\FileUploadRequest;
-use App\Shared\Requests\GetAllRequest;
-use App\Shared\Resources\GetAllCollection;
-use App\Shared\Services\FileService;
-use App\Shared\Services\SharedService;
+use App\Shared\Image\Models\Image;
+use App\Shared\Image\Resources\ImageResource;
+use App\Shared\Image\Services\ImageService;
+use App\Shared\Foundation\Controllers\Controller;
+use App\Shared\Foundation\Requests\FileMultipleUploadRequest;
+use App\Shared\Foundation\Requests\FileUploadRequest;
+use App\Shared\Foundation\Requests\GetAllRequest;
+use App\Shared\Foundation\Resources\GetAllCollection;
+use App\Shared\Foundation\Services\FileService;
+use App\Shared\Foundation\Services\SharedService;
 use Illuminate\Http\JsonResponse;
 use DB;
 
@@ -97,7 +97,7 @@ class ImageController extends Controller
 
     public function getAll(GetAllRequest $request): JsonResponse
     {
-        $query = $this->sharedService->query($request, 'Image', 'Image', 'name');
+        $query = $this->sharedService->query($request, 'Shared\\Image', 'Image', 'name');
         return response()->json(new GetAllCollection(
             ImageResource::collection($query['collection']),
             $query['total'],

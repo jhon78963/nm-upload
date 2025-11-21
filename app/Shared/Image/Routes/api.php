@@ -1,6 +1,6 @@
 <?php
 
-use App\Image\Controllers\ImageController;
+use App\Shared\Image\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(ImageController::class)->group(function() {

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Shared\Services;
+namespace App\Shared\Foundation\Services;
 
-use App\Shared\Requests\FileMultipleUploadRequest;
-use App\Shared\Requests\FileUploadRequest;
+use App\Shared\Foundation\Requests\FileMultipleUploadRequest;
+use App\Shared\Foundation\Requests\FileUploadRequest;
 use Storage;
 
 class FileService

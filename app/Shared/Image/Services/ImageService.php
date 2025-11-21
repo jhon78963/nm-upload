@@ -1,8 +1,8 @@
 <?php
-namespace App\Image\Services;
+namespace App\Shared\Image\Services;
 
-use App\Image\Models\Image;
-use App\Shared\Services\ModelService;
+use App\Shared\Image\Models\Image;
+use App\Shared\Foundation\Services\ModelService;
 
 class ImageService {
     protected ModelService $modelService;

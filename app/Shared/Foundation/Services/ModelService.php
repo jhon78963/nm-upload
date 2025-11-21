@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Shared\Services;
+namespace App\Shared\Foundation\Services;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
